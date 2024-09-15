@@ -26,10 +26,9 @@
         light.position.set(50, 50, 50);
         scene.add(light);
 
-        // Load DXF file
+        // Load DXF file from Google Drive
         const loader = new THREE.DXFLoader();
-        const urlParams = new URLSearchParams(window.location.search);
-        const dxfUrl = urlParams.get('file') || 'path/to/your/default.dxf';
+        const dxfUrl = 'https://drive.google.com/uc?export=download&id=YOUR_FILE_ID';
 
         loader.load(dxfUrl, function (geometry) {
             const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, side: THREE.DoubleSide });
